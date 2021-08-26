@@ -20,7 +20,7 @@ fn color<T>(db: f32, content: T) -> StyledObject<T> {
     }
 }
 
-fn draw(term: &Term) -> Result<(), Error> {
+fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
     let windows = TIME_WINDOWS.lock().unwrap();
 
     if windows.len() == 0 {
@@ -34,7 +34,9 @@ fn draw(term: &Term) -> Result<(), Error> {
 
     drop(windows);
 
-    term.clear_last_lines(maxes.len() + 3)?;
+    if should_clear {
+        term.clear_last_lines(maxes.len() + 3)?;
+    }
     println!("{}", style("Metering windows").underlined());
 
     for (seconds, max) in &maxes {
@@ -97,8 +99,9 @@ fn draw(term: &Term) -> Result<(), Error> {
 
 pub fn run() {
     let term = Term::stdout();
+    draw(&term, false).expect("Drawing failed");
     loop {
-        draw(&term).expect("Drawing failed");
+        draw(&term, true).expect("Drawing failed");
         std::thread::sleep(DRAW_SLEEP_TIME);
     }
 }
