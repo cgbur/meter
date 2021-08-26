@@ -75,12 +75,11 @@ fn draw(term: &Term) -> Result<(), Error> {
         let index = (max_width / MIN_DB) * (MIN_DB - *position as f32);
         let index = index as usize;
 
-        if *position != 0 {
-            if index + 3 > max_width as usize
-                || number_line[index - 2..index + 3].iter().any(|c| *c != ' ')
-            {
-                continue;
-            }
+        if *position != 0
+            && (index + 3 > max_width as usize
+                || number_line[index - 2..index + 3].iter().any(|c| *c != ' '))
+        {
+            continue;
         }
 
         for i in 0..string.len() {
