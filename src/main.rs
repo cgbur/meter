@@ -12,8 +12,8 @@ use std::time::Duration;
 const MAX_AMPLITUDE_F32: f32 = (u16::MAX / 2) as f32; // i16 max value
 const ZERO_AMPLITUDE: u16 = 0;
 const MIN_DB: f32 = -96.0;
-const FPS: u64 = 15;
 const TERMINAL_WIDTH: f32 = 0.8f32;
+const FPS: u64 = 24;
 const DRAW_SLEEP_TIME: Duration = Duration::from_millis(1000 / FPS);
 
 lazy_static! {
@@ -61,11 +61,9 @@ fn main() {
     }
     .expect("unable to build stream");
 
-    let windows = vec![0.2f32, 1.0, 3.0];
-
-    for time in windows {
-        TIME_WINDOWS.lock().unwrap().push(TimeWindow::new(time));
-    }
+    [0.2f32, 1.0, 3.0].iter().for_each(|time| {
+        TIME_WINDOWS.lock().unwrap().push(TimeWindow::new(*time));
+    });
 
     stream.play().expect("unable to play stream");
 

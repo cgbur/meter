@@ -69,7 +69,6 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
 
         print!("{}", color(current, "█"));
     }
-
     println!();
 
     let mut number_line = vec![' '; max_width as usize + 1];
@@ -101,6 +100,7 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
 pub fn run() {
     let term = Term::stdout();
     draw(&term, false).expect("Drawing failed");
+
     loop {
         draw(&term, true).expect("Drawing failed");
         std::thread::sleep(DRAW_SLEEP_TIME);

@@ -2,6 +2,17 @@
 name = "meter"
 version = "0.1.0"
 edition = "2018"
+authors = ["Chris Burgess"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/cgburgess/meter"
+homepage = "https://github.com/cgburgess/meter"
+description = """
+Terminal based level meter for adjusting microphone gain/levels.
+"""
+categories = ["command-line-utilities", "multimedia", "visualization"]
+keywords = ["level", "meter", "gain-stage", "dB", "decibel-meter"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
