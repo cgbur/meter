@@ -84,8 +84,8 @@ fn draw(term: &Term) -> Result<(), Error> {
         }
 
         for i in 0..string.len() {
-            let modifier = i - string.len() / 2;
-            number_line[index + modifier] = string.chars().nth(i).unwrap();
+            let modifier = i as i32 - string.len() as i32 / 2;
+            number_line[(index as i32 + modifier) as usize] = string.chars().nth(i).unwrap();
         }
     }
 
