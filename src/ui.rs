@@ -40,7 +40,7 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
     println!("{}", style("Metering windows").underlined());
 
     for (seconds, max) in &maxes {
-        println!("{:>4}s: {:.2} db", seconds, color(*max, max));
+        println!("{:>4}s: {:.2} dB", seconds, color(*max, max));
     }
 
     let percent = 1.0 - (maxes[0].1 / MIN_DB);
