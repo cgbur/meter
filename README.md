@@ -9,8 +9,6 @@ values in
 Currently defaults to using the default microphone. Only tested in Mac. Future plans seen in the todos.
 
 ![example](media/level-meter.gif)
-![example](media/example.png)
-![example](media/example_2.png)
 
 ## Install
 
