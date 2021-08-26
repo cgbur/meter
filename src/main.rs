@@ -1,3 +1,4 @@
+/// see [github](https://github.com/cgburgess/meter)
 mod time_window;
 mod ui;
 

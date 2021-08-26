@@ -12,7 +12,7 @@ Terminal based level meter for adjusting microphone gain/levels.
 """
 categories = ["command-line-utilities", "multimedia", "visualization"]
 keywords = ["level", "meter", "gain-stage", "dB", "decibel-meter"]
-
+exclude = ["/media"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

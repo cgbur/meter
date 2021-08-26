@@ -97,7 +97,7 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
     Ok(())
 }
 
-pub fn run() {
+pub(crate) fn run() {
     let term = Term::stdout();
     draw(&term, false).expect("Drawing failed");
 
