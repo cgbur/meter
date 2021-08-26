@@ -37,6 +37,7 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
     if should_clear {
         term.clear_last_lines(maxes.len() + 3)?;
     }
+
     println!("{}", style("Metering look-back windows").underlined());
 
     for (seconds, max) in &maxes {
