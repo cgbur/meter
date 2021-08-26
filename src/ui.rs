@@ -1,6 +1,5 @@
 use crate::{DRAW_SLEEP_TIME, MIN_DB, TERMINAL_WIDTH, TIME_WINDOWS};
 use console::{style, StyledObject, Term};
-
 use std::io::Error;
 use terminal_size::{Height, Width};
 
