@@ -69,7 +69,7 @@ fn main() {
 
     stream.play().expect("unable to play stream");
 
-    run()
+    run();
 }
 
 #[cfg(test)]
