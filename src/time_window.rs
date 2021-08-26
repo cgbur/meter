@@ -1,8 +1,8 @@
 use crate::MIN_DB;
 use cpal::StreamInstant;
 use keyed_priority_queue::KeyedPriorityQueue;
-use std::cmp::Ordering;
-use std::collections::VecDeque;
+use std::cmp::{max, Ordering};
+use std::collections::{BinaryHeap, VecDeque};
 use std::time::Duration;
 
 pub(crate) struct TimeWindow {
@@ -64,7 +64,11 @@ impl TimeWindow {
     }
 
     pub fn max(&self) -> f32 {
-        -self.maxes.peek().map(|(_, db)| db.0).unwrap_or(-MIN_DB)
+        -self
+            .maxes
+            .peek()
+            .and_then(|(_, db)| Some(db.0))
+            .unwrap_or(-MIN_DB)
     }
 }
 

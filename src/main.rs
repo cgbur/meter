@@ -3,9 +3,11 @@ mod ui;
 
 use crate::time_window::TimeWindow;
 use crate::ui::run;
-
+use console::{style, StyledObject, Term};
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
-use cpal::{InputCallbackInfo, Sample, SampleFormat, StreamError};
+use cpal::{
+    BuildStreamError, InputCallbackInfo, InputStreamTimestamp, Sample, SampleFormat, StreamError,
+};
 use lazy_static::lazy_static;
 use std::sync::Mutex;
 use std::time::Duration;

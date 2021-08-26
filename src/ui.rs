@@ -1,10 +1,10 @@
 use crate::{DRAW_SLEEP_TIME, MIN_DB, TERMINAL_WIDTH, TIME_WINDOWS};
 use console::{style, StyledObject, Term};
-
+use std::cmp::max;
 use std::io::Error;
 use terminal_size::{Height, Width};
 
-const NUMBERS: [(i32, &str); 5] = [
+const NUMBERS: [(i32, &'static str); 5] = [
     (0, "0"),
     (-10, "-10"),
     (-20, "-20"),
@@ -75,11 +75,12 @@ fn draw(term: &Term) -> Result<(), Error> {
         let index = (max_width / MIN_DB) * (MIN_DB - *position as f32);
         let index = index as usize;
 
-        if *position != 0
-            && (index + 3 > max_width as usize
-                || number_line[index - 2..index + 3].iter().any(|c| *c != ' '))
-        {
-            continue;
+        if *position != 0 {
+            if index + 3 > max_width as usize
+                || number_line[index - 2..index + 3].iter().any(|c| *c != ' ')
+            {
+                continue;
+            }
         }
 
         for i in 0..string.len() {
