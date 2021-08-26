@@ -4,7 +4,7 @@ use console::{style, StyledObject, Term};
 use std::io::Error;
 use terminal_size::{Height, Width};
 
-const NUMBERS: [(i32, &'static str); 5] = [
+const NUMBERS: [(i32, &str); 5] = [
     (0, "0"),
     (-10, "-10"),
     (-20, "-20"),
