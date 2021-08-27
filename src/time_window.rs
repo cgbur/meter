@@ -48,19 +48,6 @@ impl TimeWindow {
                 break;
             }
         }
-
-        while let Some(time) = self.times.front() {
-            if let Some(length) = time.duration_since(self.times.back().unwrap()) {
-                if length > self.keep_duration {
-                    self.maxes.remove(time);
-                    self.times.pop_front();
-                } else {
-                    break;
-                }
-            } else {
-                break;
-            }
-        }
     }
 
     pub fn max(&self) -> f32 {
