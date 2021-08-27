@@ -9,8 +9,7 @@
 
 This is a very simple command line utility written in Rust for measuring the gain of a microphone. It displays the
 values in
-[dBFS](https://en.wikipedia.org/wiki/DBFS)
-. This is useful for knowing when a microphone's gain is set to an appropriate level to avoid clipping.
+[dBFS](https://en.wikipedia.org/wiki/DBFS). This is useful for knowing when a microphone's gain is set to an appropriate level to avoid clipping.
 
 Currently defaults to using the default microphone. Only tested in Mac. Future plans seen in the todos.
 
