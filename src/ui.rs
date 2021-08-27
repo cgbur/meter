@@ -3,6 +3,8 @@ use console::{style, StyledObject, Term};
 use std::io::Error;
 use terminal_size::{Height, Width};
 
+const METER_CHAR: char = '█';
+
 const NUMBERS: [(i32, &str); 5] = [
     (0, "0"),
     (-10, "-10"),
@@ -57,7 +59,7 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
     let mut current = MIN_DB;
 
     for _ in 0..num_blocks as usize {
-        print!("{}", color(current, "█"));
+        print!("{}", color(current, METER_CHAR));
         current += skip;
     }
 
@@ -67,7 +69,7 @@ fn draw(term: &Term, should_clear: bool) -> Result<(), Error> {
             current += skip;
         }
 
-        print!("{}", color(current, "█"));
+        print!("{}", color(current, METER_CHAR));
     }
     println!();
 
