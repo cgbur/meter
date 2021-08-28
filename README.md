@@ -5,7 +5,7 @@
 [crates-badge]: https://img.shields.io/crates/v/meter.svg
 [crates-url]: https://crates.io/crates/meter
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-url]: https://github.com/tokio-rs/tokio/blob/master/LICENSE
+[mit-url]: https://github.com/cgburgess/meter/blob/master/LICENSE
 
 This is a very simple command line utility written in Rust for measuring the gain of a microphone. It displays the
 values in
