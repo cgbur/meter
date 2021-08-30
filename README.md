@@ -11,7 +11,7 @@ This is a very simple command line utility written in Rust for measuring the gai
 values in
 [dBFS](https://en.wikipedia.org/wiki/DBFS). This is useful for knowing when a microphone's gain is set to an appropriate level to avoid clipping.
 
-Currently defaults to using the default microphone. Only tested in Mac. Future plans seen in the todos.
+Currently defaults to using the default microphone. Future plans seen in the todos.
 
 ![example](media/level-meter.gif)
 
