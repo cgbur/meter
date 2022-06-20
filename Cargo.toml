@@ -17,8 +17,8 @@ exclude = ["/media"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cpal = "0.13.4"
-console = "0.14.1"
-keyed_priority_queue = "0.3.2"
+cpal = "0.13.5"
+console = "0.15.0"
+keyed_priority_queue = "0.4.1"
 lazy_static = "1.4.0"
 terminal_size = "0.1.17"
