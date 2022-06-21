@@ -5,8 +5,8 @@ edition = "2018"
 authors = ["Chris Burgess"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/cgburgess/meter"
-homepage = "https://github.com/cgburgess/meter"
+repository = "https://github.com/cgbur/meter"
+homepage = "https://github.com/cgbur/meter"
 description = """
 CLI level meter for adjusting microphone gain/levels.
 """
